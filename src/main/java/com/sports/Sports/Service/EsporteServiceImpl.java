@@ -1,5 +1,6 @@
 package com.sports.Sports.Service;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,12 +23,12 @@ public class EsporteServiceImpl implements EsporteService {
 	}
 
 	@Override
-	public Esporte getById(int id) {
+	public Esporte getById(ObjectId id) {
 		return esporteRepository.findById(id).get();
 	}
 
 	@Override
-	public void deletarEsporte(int id) {
+	public void deletarEsporte(ObjectId id) {
 		esporteRepository.deleteById(id);
 	}
 

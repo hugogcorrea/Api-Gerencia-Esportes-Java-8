@@ -3,6 +3,7 @@ package com.sports.Sports.Model;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -20,7 +21,7 @@ public class Esporte {
 
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private ObjectId id;
 	private String titulo;
 	private String descricao;
 

@@ -1,5 +1,8 @@
 package com.sports.Sports.Controller.V1;
 
+import java.util.Collection;
+
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +18,9 @@ import com.sports.Sports.Service.EsporteService;
 
 import lombok.AllArgsConstructor;
 
-import java.util.Collection;
-
 @RestController
 @AllArgsConstructor
-@RequestMapping("v1/esporte/")
+@RequestMapping("v1/esporte")
 public class EsporteController {
 
 	@Autowired
@@ -54,7 +55,7 @@ public class EsporteController {
 	 * @return
 	 */
 	@GetMapping(value = "/getbyid/{esporte-id}")
-	public Esporte getById(@PathVariable(value = "esporte-id") int id) {
+	public Esporte getById(@PathVariable(value = "esporte-id") ObjectId id) {
 		return serv.getById(id);
 	}
 
@@ -79,9 +80,15 @@ public class EsporteController {
 	 * @return
 	 */
 	@DeleteMapping(value = "/deletar/{employee-id}")
-	public String delete(@PathVariable(value = "esporte-id") int id) {
+	public String delete(@PathVariable(value = "esporte-id") ObjectId id) {
 		serv.deletarEsporte(id);
 		return "Esporte record for esporte-id= " + id + " deleted.";
+	}
+	
+	@RequestMapping(value = "/index")
+	public String teste() {
+		
+		return "index";
 	}
 
 }
