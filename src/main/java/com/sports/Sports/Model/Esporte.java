@@ -10,9 +10,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 //Mongo database annotation.
-@Document(collection= "employee")
+@Document(collection= "esporte")
 @Getter
 @Builder
 @NoArgsConstructor
@@ -22,7 +23,9 @@ public class Esporte {
 	@Id
 	@GeneratedValue
 	private ObjectId id;
+	@Setter 
 	private String titulo;
+	@Setter 
 	private String descricao;
 
 }
