@@ -23,13 +23,13 @@ public class EsporteServiceImpl implements EsporteService {
 	}
 
 	@Override
-	public Esporte getById(ObjectId id) {
-		return esporteRepository.findById(id).get();
+	public Esporte getBy_id(ObjectId _id) {
+		return esporteRepository.findById(_id).get();
 	}
 
 	@Override
-	public void deletarEsporte(ObjectId id) {
-		esporteRepository.deleteById(id);
+	public void deletarEsporte(ObjectId _id) {
+		esporteRepository.deleteById(_id);
 	}
 
 	@Override

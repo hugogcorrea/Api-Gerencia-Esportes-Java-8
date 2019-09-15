@@ -5,5 +5,5 @@
 # Stack
 
 - MongoDB Atlas
-- Front End: Vue.JS
+- Front End: Vue.JS, Bootstrap
 - Melhores práticas: Lombok, Design Patterns

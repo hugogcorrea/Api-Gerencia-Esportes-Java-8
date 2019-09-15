@@ -26,69 +26,40 @@ public class EsporteController {
 	@Autowired
 	EsporteService serv;
 
-	/**
-	 * Method to save employees in the db.
-	 * 
-	 * @param emp
-	 * @return
-	 */
+	
 	@PostMapping(value = "/inserir")
 	public String inserir(@RequestBody Esporte esp) {
 		serv.inserirEsporte(esp);
-		return "Esporte records created.";
+		//return "Esporte criado com sucesso.";
+		return esp.getTitulo() + " Cadastrado com sucesso. ";
 	}
+	
 
-	/**
-	 * Method to fetch all employees from the db.
-	 * 
-	 * @return
-	 */
+
 	@GetMapping(value = "/listarTodos")
 	public Collection<Esporte> listarTodos() {
 		return serv.listarTodosEsportes();
 	}
 
-	/**
-	 * Method to fetch employee by id.
-	 * 
-	 * @param id
-	 * @return
-	 */
 	@GetMapping(value = "/getbyid/{esporte-id}")
-	public Esporte getById(@PathVariable(value = "esporte-id") ObjectId id) {
-		return serv.getById(id);
+	public Esporte getById(@PathVariable(value = "esporte-id") ObjectId _id) {
+		return serv.getBy_id(_id);
 	}
 
-	/**
-	 * Method to update employee by id.
-	 * 
-	 * @param id
-	 * @param e
-	 * @return
-	 */
-	@PutMapping(value = "/atualizar/{employee-id}")
-	public String atualizar(@PathVariable(value = "esporte-id") int id, @RequestBody Esporte esp) {
+	
+	@PutMapping(value = "/atualizar/{esporte-id}")
+	public String atualizar(@PathVariable(value = "esporte-id") ObjectId _id, @RequestBody Esporte esp) {
 
 		serv.atualizarEsporte(esp);
-		return "Esporte record for esporte-id= " + id + " updated.";
+		return "Esporte atualiz para esporte-id= " + _id + " atualizado.";
 	}
 
-	/**
-	 * Method to delete employee by id.
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@DeleteMapping(value = "/deletar/{employee-id}")
-	public String delete(@PathVariable(value = "esporte-id") ObjectId id) {
-		serv.deletarEsporte(id);
-		return "Esporte record for esporte-id= " + id + " deleted.";
+	
+	@DeleteMapping(value = "/deletar/{esporte-id}")
+	public String delete(@PathVariable(value = "esporte-id") ObjectId _id) {
+		serv.deletarEsporte(_id);
+		return "Esporte esporte-id= " + _id + " excluído.";
 	}
 	
-	@RequestMapping(value = "/index")
-	public String teste() {
-		
-		return "index";
-	}
 
 }

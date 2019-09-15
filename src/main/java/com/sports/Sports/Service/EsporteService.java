@@ -8,9 +8,9 @@ import com.sports.Sports.Model.Esporte;
 
 public interface EsporteService {
 
-	Esporte getById(ObjectId id);
+	Esporte getBy_id(ObjectId _id);
 
-	void deletarEsporte(ObjectId id);
+	void deletarEsporte(ObjectId _id);
 	
 	void inserirEsporte(Esporte esp);
 	
