@@ -1,9 +1,10 @@
 
 <template>
     <div class="home">
-        <EsporteList />
-
+        <EsporteList />        
     </div>
+
+    
 </template>
 
 

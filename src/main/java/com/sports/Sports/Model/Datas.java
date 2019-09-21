@@ -1,5 +1,6 @@
 package com.sports.Sports.Model;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -15,32 +16,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-//Mongo database annotation.
+
 @Document(collection= "esporte")
-//cria automaticamente um construtor com todas os atributos da classe como argumento.
 @AllArgsConstructor
-//cria automaticamente um construtor vazio (sem argumentos).
 @NoArgsConstructor
-//cria automaticamente os métodos toString, equals, hashCode, getters e setters.
 @Data
 @ToString
-public class Esporte{
-
-
+public class Datas {
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private ObjectId _id;
 
-	private String titulo;
-	 
 	private String descricao;
-
-	private Collection<Datas> data = new ArrayList<Datas>();
+	
+	private Date data;
+	
+	private Collection<Exercicio> exercicio = new ArrayList<Exercicio>();
 	
 	public String get_id() {
 		return _id.toHexString();
 	}
-	
 
-	
 }

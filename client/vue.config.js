@@ -13,6 +13,10 @@ module.exports = {
       "/deletar/": {
         target: "http://localhost:8080/v1/esporte",
         secure: false
+      },
+      "/atualizar/": {
+        target: "http://localhost:8080/v1/esporte",
+        secure: false
       }
     }
   }

@@ -1,8 +1,5 @@
 package com.sports.Sports.Model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,32 +12,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-//Mongo database annotation.
 @Document(collection= "esporte")
-//cria automaticamente um construtor com todas os atributos da classe como argumento.
 @AllArgsConstructor
-//cria automaticamente um construtor vazio (sem argumentos).
 @NoArgsConstructor
-//cria automaticamente os métodos toString, equals, hashCode, getters e setters.
 @Data
 @ToString
-public class Esporte{
-
+public class Exercicio {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private ObjectId _id;
 
-	private String titulo;
-	 
-	private String descricao;
+	private String nome;
 
-	private Collection<Datas> data = new ArrayList<Datas>();
-	
+	private String tipo;
+
 	public String get_id() {
 		return _id.toHexString();
 	}
-	
-
-	
 }

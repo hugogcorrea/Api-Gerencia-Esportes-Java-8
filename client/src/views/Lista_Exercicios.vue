@@ -1,9 +1,10 @@
 
 <template>
     <div class="home">
-        <EsporteList />
-
+        <ExercicioList />        
     </div>
+
+    
 </template>
 
 
@@ -11,11 +12,11 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import EsporteList from '@/components/EsporteList.vue';
+    import ExercicioList from '@/components/ExercicioList.vue';
 
     @Component({
         components: {
-            EsporteList
+            ExercicioList
         },
     })
     export default class Home extends Vue  {  }

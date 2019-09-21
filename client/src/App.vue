@@ -2,7 +2,7 @@
     <div id="app">
         <div id="nav">
             <router-link to="/">Esportes</router-link> |
-            <router-link to="/about">Cadastrar</router-link>
+            <router-link to="/exercicios">Exercícios</router-link>
         </div>
         <router-view />
     </div>
